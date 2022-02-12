@@ -8,6 +8,64 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <app-root></app-root>
+  <app-root>
+    <style>
+      body {
+        background-color: #ffffff;
+        min-height: 100vh;
+        position: relative;
+      }
+
+      .container {
+        position: absolute;
+        width: 200px;
+        height: 62px;
+        left: calc(50% - 100px);
+        top: calc(50% - 31px);
+        background: transparent url('/assets/logo.svg') center center no-repeat;
+        background-size: 100%;
+        z-index: 10002;
+      }
+
+      .progress {
+        position: absolute;
+        background-color: #C0C0C0;
+        z-index: 10003;
+        left: 15%;
+        bottom: 0;
+        width: 70%;
+        height: 2px;
+        display: inline-block;
+        overflow: hidden;
+        border-radius: 3px;
+      }
+
+      .progress::after {
+        content: "";
+        position: relative;
+        background-color: #121212;
+        transition: .3s all linear;
+        animation: live 2s infinite linear;
+        height: 100%;
+        width: 50%;
+        display: block;
+      }
+
+      @keyframes live {
+        0% {
+          left: -40%;
+        }
+        50% {
+          left: 90%;
+        }
+        100% {
+          left: -40%;
+        }
+      }
+    </style>
+    <div class="container">
+      <div class="progress"></div>
+    </div>
+  </app-root>
 </body>
 </html>
