@@ -3,7 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  app: {
+    ajax: {
+      url: 'https://content-store.explore.bfi.digital/api/',
+      cache: true
+    },
+    version: '1.0'
+  }
 };
 
 /*
