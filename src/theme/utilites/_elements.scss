@@ -1,0 +1,123 @@
+html {
+  font-family: $font-family-base;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-header;
+  line-height: 1.2;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+}
+
+h1 {
+  @include make-h1();
+}
+
+h2 {
+  @include make-h2();
+}
+
+h3 {
+  @include make-h3();
+}
+
+h4 {
+  @include make-h4();
+}
+
+h5 {
+  @include make-h5();
+}
+
+h6 {
+  @include make-h6();
+}
+
+p {
+  line-height: 1.6;
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+em {
+  font-style: italic;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  img {
+    vertical-align: bottom;
+  }
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  appearance: none;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+abbr[title] {
+  text-decoration: none;
+}
+
+address {
+  font-style: normal;
+}
+
+iframe {
+  border: 0;
+}
+
+sub,
+sup {
+  font-size: .7em;
+}
+
+sub {
+  bottom: -.25rem;
+  vertical-align: sub;
+}
+
+sup {
+  top: -.25rem;
+  vertical-align: super;
+}
+
+small {
+  font-size: fluid-unit(12);
+}

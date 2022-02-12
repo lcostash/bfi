@@ -1,0 +1,68 @@
+@mixin make-overlay($color: #000, $opacity: .3) {
+  position: relative;
+
+  &::before {
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    position: absolute;
+    background-color: rgba($color, $opacity);
+  }
+}
+
+@mixin make-h1() {
+  font-size: fluid-unit(60px);
+  margin-top: 0;
+
+  @media only screen and (max-width: map-get($breakpoints, "md")) {
+    font-size: fluid-unit(40px);
+  }
+}
+
+@mixin make-h2() {
+  font-size: fluid-unit(50px);
+  margin-top: 0;
+
+  @media only screen and (max-width: map-get($breakpoints, "md")) {
+    font-size: fluid-unit(35px);
+  }
+}
+
+@mixin make-h3() {
+  font-size: fluid-unit(28px);
+  margin-top: 0;
+
+  @media only screen and (max-width: map-get($breakpoints, "md")) {
+    font-size: fluid-unit(24px);
+  }
+}
+
+@mixin make-h4() {
+  font-size: fluid-unit(22px);
+  margin-top: 0;
+
+  @media only screen and (max-width: map-get($breakpoints, "md")) {
+    font-size: fluid-unit(18px);
+  }
+}
+
+@mixin make-h5() {
+  font-size: fluid-unit(20px);
+  margin-top: 0;
+
+  @media only screen and (max-width: map-get($breakpoints, "md")) {
+    font-size: fluid-unit(16px);
+  }
+}
+
+@mixin make-h6() {
+  font-size: fluid-unit(18px);
+  margin-top: 0;
+
+  @media only screen and (max-width: map-get($breakpoints, "md")) {
+    font-size: fluid-unit(16px);
+  }
+}

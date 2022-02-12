@@ -1,0 +1,10 @@
+@use "sass:math";
+@use "sass:map";
+
+@function fluid-unit($pixels) {
+  @return #{math.div($pixels, ($pixels * 0 + 1)) * 0.06}rem;
+}
+
+@function color($key: "black") {
+  @return map.get($colors, $key);
+}

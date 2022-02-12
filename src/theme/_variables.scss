@@ -1,0 +1,25 @@
+$assets: "/assets";
+$font-family-base: "Open Sans", sans-serif;
+$font-family-header: "Titillium Web", "Roboto", "Helvetica Neue", sans-serif;
+$font-family-button: "Rajdhani", "Roboto", "Helvetica Neue", sans-serif;
+$max-width: 1440px !default;
+$gutter: 24px !default;
+$padding: 16px !default;
+$margin: 60px !default;
+
+
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+
+$colors: (
+  "black": #000000,
+  "night": #0C090A,
+  "silver": #C0C0C0,
+  "white": #FFFFFF
+) !default;

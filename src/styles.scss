@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+/* Import the google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400&family=Titillium+Web:wght@200;300;400;600&display=swap');
+
+/* Add the Swiper styles */
+@import '~swiper/swiper-bundle.min.css';
+
+/* Add the theme styles */
+@import "theme/variables";
+@import "theme/functions";
+@import "theme/mixins";
+@import "theme/utilites/normalize";
+@import "theme/utilites/elements";
+
+
+
+
