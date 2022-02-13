@@ -6,8 +6,7 @@ export const environment = {
   production: false,
   app: {
     ajax: {
-      url: 'https://content-store.explore.bfi.digital/api/',
-      cache: true
+      url: 'https://content-store.explore.bfi.digital/api/'
     },
     version: '1.0'
   }

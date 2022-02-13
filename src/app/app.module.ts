@@ -1,18 +1,31 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule, APP_INITIALIZER} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import {ToastrModule} from 'ngx-toastr';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
+import {AppRouting} from './routings';
+import {InitAppHelper} from './helpers';
+import {HttpService} from './services';
+import {ErrorInterceptor} from './interceptors';
+
+const initAppFactory = (initAppHelper: InitAppHelper): any => (): Promise<any> => initAppHelper.load();
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRouting,
+    HttpClientModule,
+    ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    HttpService,
+    InitAppHelper,
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+    {provide: APP_INITIALIZER, useFactory: initAppFactory, multi: true, deps: [InitAppHelper]}
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
