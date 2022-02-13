@@ -1,12 +1,24 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable, ReplaySubject} from 'rxjs';
 import {tap} from 'rxjs/operators';
 import {environment} from '../../environments/environment';
 import {ActionEnum} from '../enums';
+import {AuthorsResponseInterface, TypesResponseInterface} from '../interfaces';
 
 @Injectable()
 export class HttpService {
+
+  /**
+   * @var types$ Keep the types' data from back-end.
+   */
+  static types$ = new ReplaySubject<TypesResponseInterface>(1);
+
+  /**
+   * @var authors$ Keep the authors' data from back-end.
+   */
+  static authors$ = new ReplaySubject<AuthorsResponseInterface>(1);
+
 
   /**
    * The constructor.
@@ -14,6 +26,7 @@ export class HttpService {
    */
   constructor(private httpClient: HttpClient) {
   }
+
 
   /**
    * The main function to fetch data from back-end.
@@ -50,7 +63,10 @@ export class HttpService {
       http = this.httpClient.delete(url);
     }
 
-    return http.pipe(tap((result: any) => result, (error: any) => error));
+    return http.pipe(tap({
+      next: (result: any) => result,
+      error: (error: any) => error
+    }));
   }
 
 }
