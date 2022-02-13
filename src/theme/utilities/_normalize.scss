@@ -1,3 +1,21 @@
+html {
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+}
+
+* {
+  &::before, &::after {
+    box-sizing: border-box;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: $font-family-base;
+  font-size: fluid-unit(14px);
+  color: color("black");
+}
+
 audio,
 canvas,
 progress,
@@ -84,27 +102,15 @@ input[type=submit] {
 a,
 a div,
 a span,
-a ion-icon,
-a ion-label,
 button,
 button div,
 button span,
-button ion-icon,
-button ion-label,
-.ion-tappable,
 [tappable],
 [tappable] div,
 [tappable] span,
-[tappable] ion-icon,
-[tappable] ion-label,
 input,
 textarea {
   touch-action: manipulation;
-}
-
-a ion-label,
-button ion-label {
-  pointer-events: none;
 }
 
 button {

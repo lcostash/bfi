@@ -1,7 +1,6 @@
 $assets: "/assets";
-$font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$font-family-header: "Titillium Web", "Roboto", "Helvetica Neue", sans-serif;
-$font-family-button: "Rajdhani", "Roboto", "Helvetica Neue", sans-serif;
+$font-family-base: 'Roboto Serif', sans-serif;;
+$font-family-header: 'Titillium Web', sans-serif;
 $max-width: 1440px !default;
 $gutter: 24px !default;
 $padding: 16px !default;
@@ -19,7 +18,9 @@ $breakpoints: (
 
 $colors: (
   "black": #000000,
-  "night": #0C090A,
-  "silver": #C0C0C0,
+  "pink": #EF8DC6,
+  "violet": #783df6,
+  "rose": #F9DDE7,
+  "silver": #F5F5F5,
   "white": #FFFFFF
 ) !default;

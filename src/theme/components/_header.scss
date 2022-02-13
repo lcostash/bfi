@@ -1,0 +1,8 @@
+.header {
+  padding: fluid-unit($padding) 0;
+  border-bottom: 1px solid color("silver");
+
+  &__logo {
+    margin: auto;
+  }
+}

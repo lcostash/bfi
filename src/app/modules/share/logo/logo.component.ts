@@ -6,13 +6,17 @@ import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class LogoComponent implements OnInit {
-  @Input() height = 30;
-  @Input() width = 120;
+  // The height of the logo
+  @Input() height = 40;
 
+  // The width of the logo
+  @Input() width = 40;
+
+  // Extend the css classes
+  @Input() css = '';
 
   constructor() {
   }
-
 
   ngOnInit() {
   }

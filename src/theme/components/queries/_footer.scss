@@ -1,0 +1,19 @@
+@media screen and (min-width: map-get($breakpoints, "md")) {
+  .footer {
+    &__container {
+      flex-direction: row;
+    }
+
+    &__about,
+    &__copyright {
+      flex: 1;
+    }
+
+    &__copyright {
+      margin-top: unset;
+      display: flex;
+      justify-content: right;
+      align-items: center;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.page {
+  &__content {
+    padding: fluid-unit($padding) 0;
+    min-height: 100vh;
+
+    a {
+      @include make-link();
+    }
+  }
+}

@@ -1,8 +1,8 @@
 /* Import the google fonts */
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif&family=Titillium+Web:wght@300&display=swap');
 
 /* Import the swiper's styles */
-@import '~swiper/swiper-bundle.min.css';
+//@import '~swiper/swiper-bundle.min.css';
 
 /* Import the regular toast's styles */
 @import '~ngx-toastr/toastr';
@@ -11,8 +11,15 @@
 @import "theme/variables";
 @import "theme/functions";
 @import "theme/mixins";
-@import "theme/utilites/normalize";
-@import "theme/utilites/elements";
+@import "theme/utilities/normalize";
+@import "theme/utilities/elements";
+@import "theme/components/logo";
+@import "theme/components/header";
+@import "theme/components/footer";
+@import "theme/components/page";
+@import "theme/components/container";
+
+@import "theme/components/queries/footer";
 
 
 

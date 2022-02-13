@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 
-import {LogoComponent} from './share';
+import {FooterComponent, HeaderComponent, LogoComponent} from './share';
 
 
 @NgModule({
@@ -15,9 +15,13 @@ import {LogoComponent} from './share';
   ],
   providers: [],
   declarations: [
+    FooterComponent,
+    HeaderComponent,
     LogoComponent
   ],
   exports: [
+    FooterComponent,
+    HeaderComponent,
     LogoComponent
   ]
 })
