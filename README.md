@@ -15,7 +15,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Live example of the project
 
-The live example of this project can be founded [here](https://bfi.mycashbag.org). The project will be hosted there until 28/02/2022.
+The live example of this project can be founded [here](http://bfi.mycashbag.org). The project will be hosted there until 28/02/2022.
 
 ## Detail on the available content API endpoints
 
@@ -39,3 +39,7 @@ Examples of this:
 You can find a list of all available types and authors along with corresponding id here:
 * https://content-store.explore.bfi.digital/api/types
 * https://content-store.explore.bfi.digital/api/authors
+
+## Disclaimer
+
+The licence is MIT licensed. All content, API endpoints and logo have protected by [BFI](https://www.bfi.org.uk/).
