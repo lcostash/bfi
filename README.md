@@ -1,27 +1,41 @@
-# Bfi
+# BFI Software developer technical task
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
 
-## Development server
+## Run the project locally 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. Be sure you have installed [Node.js](https://nodejs.org/en/);
+2. Clone the project on local machine in folder `bfi`;
+3. Go inside of `bfi` folder and run `npm install`;
+4. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
+## Prepare the project for production
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Live example of the project
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+The live example of this project can be founded [here](https://bfi.mycashbag.org). The project will be hosted there until 28/02/2022.
 
-## Running end-to-end tests
+## Detail on the available content API endpoints
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Full article listing:
+* https://content-store.explore.bfi.digital/api/articles
 
-## Further help
+This can be paged thus:
+* https://content-store.explore.bfi.digital/api/articles?page=2
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+You can also specify the number of results per page, for example:
+* https://content-store.explore.bfi.digital/api/articles?page=1&size=10
+
+You can filter based on author or article type:
+* https://content-store.explore.bfi.digital/api/articles?author={author-id}
+* https://content-store.explore.bfi.digital/api/articles?type={review-id}
+
+Examples of this:
+* https://content-store.explore.bfi.digital/api/articles?author=26a4d401-c374-590f-9150-999e19e53da7
+* https://content-store.explore.bfi.digital/api/articles?type=reviews
+
+You can find a list of all available types and authors along with corresponding id here:
+* https://content-store.explore.bfi.digital/api/types
+* https://content-store.explore.bfi.digital/api/authors
