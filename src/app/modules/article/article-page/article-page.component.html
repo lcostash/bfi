@@ -1,0 +1,38 @@
+<div class="container">
+
+  <p *ngIf="!article && !isBusy">No data to display.</p>
+  <p *ngIf="isBusy">Loading...</p>
+
+  <article class="article" *ngIf="article">
+    <div class="article__image">
+      <img [src]="article.primary_image.url" [alt]="article.primary_image.caption"
+           *ngIf="article.primary_image.url">
+    </div>
+    <div class="article__content">
+      <dl class="article__tags">
+        <dt *ngIf="article.type">Type:</dt>
+        <dd *ngIf="article.type">{{article.type.name}}</dd>
+        <dt *ngIf="article.category">Category:</dt>
+        <li *ngIf="article.category">{{article.category.name}}</li>
+        <dt *ngIf="article.brand">Brand:</dt>
+        <li *ngIf="article.brand">{{article.brand.name}}</li>
+        <dt *ngIf="article.created">Created:</dt>
+        <dd *ngIf="article.created">{{article.created|date}}</dd>
+        <dt *ngIf="article.authors">Author:</dt>
+        <dd *ngIf="article.authors">
+          <ng-container *ngFor="let author of article.authors">
+            <span [innerText]="author.name"></span>
+          </ng-container>
+        </dd>
+      </dl>
+      <h1 class="article__title" [innerText]="article.title"></h1>
+      <h4 class="article__summary" [innerText]="article.summary"></h4>
+      <div class="article__body" [innerHtml]="article.body"></div>
+    </div>
+  </article>
+
+  <ng-container *ngFor="let author of article?.authors">
+    <app-articles-by [source]="author" [filter]="filterEnum.author" [limit]="7"></app-articles-by>
+  </ng-container>
+
+</div>

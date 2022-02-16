@@ -67,12 +67,25 @@
   }
 }
 
-@mixin make-link() {
-  color: color("violet");
+@mixin make-link($color: "violet") {
+  color: color($color);
 
   &:hover,
   &:active,
   &:focus {
     text-decoration: underline;
   }
+}
+
+@mixin make-transition($duration: .3s, $delay: 0s, $property: all, $timing-function: ease-in-out) {
+  transition-delay: $delay;
+  transition-duration: $duration;
+  transition-property: $property;
+  transition-timing-function: $timing-function;
+}
+
+@mixin make-reset-list() {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }

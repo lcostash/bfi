@@ -1,0 +1,46 @@
+<section class="articles-by" *ngIf="source">
+  <h1 class="articles-by__title">
+    <a [routerLink]="[link, source.id]" [title]="'View all from ' + source.name" [innerText]="source.name"></a>
+  </h1>
+
+  <p class="articles-by__message" *ngIf="articles.length===0 && !isBusy">No data to display.</p>
+  <p class="articles-by__message" *ngIf="isBusy">Loading...</p>
+
+  <div class="articles-by__items">
+    <ng-container *ngFor="let article of articles">
+      <a class="articles-by__link" [routerLink]="['/articles', article.uuid]">
+        <article class="articles-by__item">
+          <div class="articles-by__item-image">
+            <img [src]="article.primary_image.url" [alt]="article.primary_image.caption"
+                 *ngIf="article.primary_image.url">
+          </div>
+          <div class="articles-by__item-content">
+            <div class="articles-by__item-type" *ngIf="article.type" [innerText]="article.type.name"></div>
+            <ul class="articles-by__item-tags">
+              <li class="articles-by__item-text" *ngIf="article.created">Created:</li>
+              <li class="articles-by__item-tag" *ngIf="article.created">{{article.created|date}}</li>
+              <li class="articles-by__item-text" *ngIf="article.brand">Brand:</li>
+              <li class="articles-by__item-tag" *ngIf="article.brand">{{article.brand.name}}</li>
+              <li class="articles-by__item-text" *ngIf="article.category">Category:</li>
+              <li class="articles-by__item-tag" *ngIf="article.category">{{article.category.name}}</li>
+              <li class="articles-by__item-text" *ngIf="article.authors">Author:</li>
+              <ng-container *ngFor="let author of article.authors">
+                <li class="articles-by__item-tag" [innerText]="author.name"></li>
+              </ng-container>
+            </ul>
+            <h2 class="articles-by__item-title" [innerText]="article.title"></h2>
+            <p class="articles-by__item-summary" [innerText]="article.summary"></p>
+          </div>
+        </article>
+      </a>
+    </ng-container>
+
+    <a class="articles-by__link" [routerLink]="[link, source.id]">
+      <article class="articles-by__item articles-by__item--read-more">
+        <div class="articles-by__item-content">
+          <h2 class="articles-by__item-title" [innerText]="'View all from ' + source.name"></h2>
+        </div>
+      </article>
+    </a>
+  </div>
+</section>

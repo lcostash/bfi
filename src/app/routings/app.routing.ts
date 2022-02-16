@@ -4,6 +4,10 @@ import {PreloadingHelper} from '../helpers';
 
 const routes: Routes = [
   {
+    path: 'articles',
+    loadChildren: () => import('../modules/article.module').then(m => m.ArticleModule)
+  },
+  {
     path: 'page',
     loadChildren: () => import('../modules/page.module').then(m => m.PageModule)
   },

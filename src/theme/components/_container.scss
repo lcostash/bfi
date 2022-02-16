@@ -1,5 +1,8 @@
 .container {
   margin: 0 auto;
-  padding: 0 fluid-unit($padding);
+  padding: 0 fluid-unit(16px);
   max-width: fluid-unit($max-width);
+  display: flex;
+  flex-wrap: wrap;
+  gap: fluid-unit(60px);
 }

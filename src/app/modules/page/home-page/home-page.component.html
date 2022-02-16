@@ -1,3 +1,7 @@
 <div class="container">
-  home page
+
+  <ng-container *ngFor="let type of types?.data">
+    <app-articles-by [source]="type" [filter]="filterEnum.type" [limit]="7"></app-articles-by>
+  </ng-container>
+
 </div>
