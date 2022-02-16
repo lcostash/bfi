@@ -1,0 +1,31 @@
+<article class="article" [ngClass]="css" *ngIf="article">
+  <a class="article__link" [routerLink]="['/articles', article.uuid]">
+    <div class="article__image">
+      <img [src]="article.primary_image.url" [alt]="article.primary_image.caption"
+           *ngIf="article.primary_image.url">
+    </div>
+  </a>
+  <div class="article__content">
+    <div class="article__type" *ngIf="article.type">
+      <a [routerLink]="['/articles/type', article.type.id]" [innerText]="article.type.name"></a>
+    </div>
+    <ul class="article__tags">
+      <li class="article__text" *ngIf="article.created">Created:</li>
+      <li class="article__tag" *ngIf="article.created">{{article.created|date}}</li>
+      <li class="article__text" *ngIf="article.brand">Brand:</li>
+      <li class="article__tag" *ngIf="article.brand">{{article.brand.name}}</li>
+      <li class="article__text" *ngIf="article.category">Category:</li>
+      <li class="article__tag" *ngIf="article.category">{{article.category.name}}</li>
+      <li class="article__text" *ngIf="article.authors">Author:</li>
+      <ng-container *ngFor="let author of article.authors">
+        <li class="article__tag">
+          <a [routerLink]="['/articles/author', author.id]" [innerText]="author.name"></a>
+        </li>
+      </ng-container>
+    </ul>
+    <a class="article__link" [routerLink]="['/articles', article.uuid]">
+      <h2 class="article__title" [innerText]="article.title"></h2>
+      <p class="article__summary" [innerText]="article.summary"></p>
+    </a>
+  </div>
+</article>

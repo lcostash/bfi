@@ -1,7 +1,25 @@
 <div class="container">
 
+  <section class="page__types" *ngIf="types">
+    <h1 class="page__types-title">The articles by type</h1>
+    <ul class="page__types-list">
+      <ng-container *ngFor="let type of types?.data">
+        <li><a [routerLink]="['/articles/type', type.id]"><h6 [innerText]="type.name"></h6></a></li>
+      </ng-container>
+    </ul>
+  </section>
+
   <ng-container *ngFor="let type of types?.data">
     <app-articles-by [source]="type" [filter]="filterEnum.type" [limit]="7"></app-articles-by>
   </ng-container>
+
+  <section class="page__authors" *ngIf="authors">
+    <h1 class="page__authors-title">Read more from our authors</h1>
+    <ul class="page__authors-list">
+      <ng-container *ngFor="let author of authors?.data">
+        <li><a [routerLink]="['/articles/author', author.id]" [innerText]="author.name"></a></li>
+      </ng-container>
+    </ul>
+  </section>
 
 </div>

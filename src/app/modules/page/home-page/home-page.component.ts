@@ -37,9 +37,9 @@ export class HomePageComponent implements OnInit, OnDestroy {
     this.subscriptions.push(types$);
 
     // Subscribe to the replay subject which kept the authors from back-end
-    const authors$ = HttpService.types$.subscribe({
-      next: result => this.types = result as AuthorsResponseInterface,
-      error: () => this.types = undefined
+    const authors$ = HttpService.authors$.subscribe({
+      next: result => this.authors = result as AuthorsResponseInterface,
+      error: () => this.authors = undefined
     });
     this.subscriptions.push(authors$);
   }

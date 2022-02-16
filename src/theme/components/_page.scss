@@ -3,4 +3,32 @@
     padding: fluid-unit(60px) 0;
     min-height: 100vh;
   }
+
+  &__types-title,
+  &__authors-title {
+    position: relative;
+    padding-left: fluid-unit(16px);
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: fluid-unit(6px);
+      height: 100%;
+      left: 0;
+      top: 0;
+      background-color: color("pink");
+    }
+  }
+
+  &__types-list,
+  &__authors-list {
+    @include make-reset-list();
+    display: flex;
+    flex-wrap: wrap;
+    gap: fluid-unit(16px);
+
+    a {
+      @include make-link();
+    }
+  }
 }

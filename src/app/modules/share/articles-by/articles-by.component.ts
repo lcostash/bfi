@@ -25,6 +25,7 @@ export class ArticlesByComponent implements OnInit, OnDestroy {
   // The loading of the page
   isBusy = false;
 
+  // The filter enums
   filterEnum: typeof FilterEnum = FilterEnum;
 
   // The list of subscriptions

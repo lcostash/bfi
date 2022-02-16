@@ -1,5 +1,6 @@
 export interface MetaInterface {
-  total: {
-    hits: number;
-  }
+  current_page?: string;
+  last_page?: number;
+  per_page?: string;
+  total: { hits: number; } | number;
 }

@@ -20,7 +20,21 @@ const routes: Routes = [
         }
       },
       {
+        path: 'type/:id/page/:current_page',
+        component: ArticleListComponent,
+        data: {
+          filter: FilterEnum.type
+        }
+      },
+      {
         path: 'author/:id',
+        component: ArticleListComponent,
+        data: {
+          filter: FilterEnum.author
+        }
+      },
+      {
+        path: 'author/:id/page/:current_page',
         component: ArticleListComponent,
         data: {
           filter: FilterEnum.author

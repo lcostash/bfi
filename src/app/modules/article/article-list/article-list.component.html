@@ -1,5 +1,31 @@
 <div class="container">
 
-  article list
+  <section class="article-list section">
+    <h1 class="section__title" [innerText]="title"></h1>
+
+    <p class="section__message" *ngIf="articles.length===0 && !isBusy">No data to display.</p>
+    <p class="section__message" *ngIf="isBusy">Loading...</p>
+
+    <div class="article-list__items articles">
+      <ng-container *ngFor="let article of articles">
+        <app-article [article]="article" css="article-list__item"></app-article>
+      </ng-container>
+    </div>
+
+    <div class="section__pages" *ngIf="!isBusy">
+      <h4 class="section__message">Current page is {{currentPage}} from {{lastPage}}</h4>
+      <ul class="pages" *ngIf="meta">
+        <li><a class="pages__link"
+               [routerLink]="previousPage"
+               [ngClass]="{'pages__link--disabled': currentPage === 1}"
+               [innerText]="'Previous Page'"></a></li>
+        <li><a class="pages__link"
+               [routerLink]="nextPage"
+               [ngClass]="{'pages__link--disabled': currentPage === lastPage}"
+               [innerText]="'Next Page'"></a></li>
+      </ul>
+    </div>
+
+  </section>
 
 </div>

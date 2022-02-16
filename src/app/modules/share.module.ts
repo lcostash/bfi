@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 
-import {ArticlesByComponent, FooterComponent, HeaderComponent, LogoComponent} from './share';
+import {ArticleComponent, ArticlesByComponent, FooterComponent, HeaderComponent, LogoComponent} from './share';
 
 
 @NgModule({
@@ -15,12 +15,14 @@ import {ArticlesByComponent, FooterComponent, HeaderComponent, LogoComponent} fr
   ],
   providers: [],
   declarations: [
+    ArticleComponent,
     ArticlesByComponent,
     FooterComponent,
     HeaderComponent,
     LogoComponent
   ],
   exports: [
+    ArticleComponent,
     ArticlesByComponent,
     FooterComponent,
     HeaderComponent,

@@ -3,13 +3,13 @@
   <p *ngIf="!article && !isBusy">No data to display.</p>
   <p *ngIf="isBusy">Loading...</p>
 
-  <article class="article" *ngIf="article">
-    <div class="article__image">
+  <article class="article-page" *ngIf="article">
+    <div class="article-page__image">
       <img [src]="article.primary_image.url" [alt]="article.primary_image.caption"
            *ngIf="article.primary_image.url">
     </div>
-    <div class="article__content">
-      <dl class="article__tags">
+    <div class="article-page__content">
+      <dl class="article-page__tags">
         <dt *ngIf="article.type">Type:</dt>
         <dd *ngIf="article.type">{{article.type.name}}</dd>
         <dt *ngIf="article.category">Category:</dt>
@@ -21,13 +21,13 @@
         <dt *ngIf="article.authors">Author:</dt>
         <dd *ngIf="article.authors">
           <ng-container *ngFor="let author of article.authors">
-            <span [innerText]="author.name"></span>
+            <a [routerLink]="['/articles/author', author.id]" [innerText]="author.name"></a>
           </ng-container>
         </dd>
       </dl>
-      <h1 class="article__title" [innerText]="article.title"></h1>
-      <h4 class="article__summary" [innerText]="article.summary"></h4>
-      <div class="article__body" [innerHtml]="article.body"></div>
+      <h1 class="article-page__title" [innerText]="article.title"></h1>
+      <h4 class="article-page__summary" [innerText]="article.summary"></h4>
+      <div class="article-page__body" [innerHtml]="article.body"></div>
     </div>
   </article>
 

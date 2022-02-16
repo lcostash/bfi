@@ -1,0 +1,20 @@
+.section {
+  &__title {
+    position: relative;
+    padding-left: fluid-unit(16px);
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: fluid-unit(6px);
+      height: 100%;
+      left: 0;
+      top: 0;
+      background-color: color("pink");
+    }
+  }
+
+  &__pages {
+    margin-top: fluid-unit(30px);
+  }
+}

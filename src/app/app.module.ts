@@ -8,6 +8,7 @@ import {AppRouting} from './routings';
 import {InitAppHelper} from './helpers';
 import {HttpService} from './services';
 import {ErrorInterceptor} from './interceptors';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 const initAppFactory = (initAppHelper: InitAppHelper): any => (): Promise<any> => initAppHelper.load();
 
@@ -17,6 +18,7 @@ const initAppFactory = (initAppHelper: InitAppHelper): any => (): Promise<any> =
     BrowserModule,
     AppRouting,
     HttpClientModule,
+    BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],
   providers: [

@@ -1,22 +1,109 @@
 .article {
-  &__image {
-    border-radius: fluid-unit(16px);
-    overflow: hidden;
+  border-radius: fluid-unit(10px);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 
-    img {
-      border-radius: fluid-unit(16px);
-      width: 100%;
-    }
+  &__type {
+    position: absolute;
+    top: fluid-unit(16px);
+    right: fluid-unit(16px);
+    background-color: color("rose");
+    border-radius: fluid-unit(10px);
+    padding: fluid-unit(6px) fluid-unit(10px);
+    font-family: $font-family-header;
+    font-size: .85em;
+    line-height: 1;
   }
 
   &__tags {
-    display: grid;
-    gap: fluid-unit(10px);
-    grid-template-columns: fluid-unit(30px) 1fr;
+    @include make-reset-list();
+    display: flex;
+    flex-wrap: wrap;
+    gap: fluid-unit(6px);
+    margin-bottom: fluid-unit(16px);
+    align-items: center;
+  }
 
-    dt,
-    dd {
-      text-align: left;
+  &__tag {
+    background-color: rgba(color("black"), .1);
+    border-radius: fluid-unit(10px);
+    padding: fluid-unit(6px) fluid-unit(10px);
+    font-family: $font-family-header;
+    font-size: .85em;
+    line-height: 1;
+  }
+
+  &__content {
+    border-bottom-left-radius: fluid-unit(10px);
+    border-bottom-right-radius: fluid-unit(10px);
+    border: 1px solid rgba(color("black"), .2);
+    border-top: 0;
+    padding: fluid-unit(16px);
+    flex: 1 1;
+  }
+
+  &__image {
+    overflow: hidden;
+    position: relative;
+    background-color: rgba(color("black"), .2);
+    min-height: fluid-unit(200px);
+    max-height: fluid-unit(200px);
+    flex: 1;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    @include make-h4();
+  }
+
+  &--read-more {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(color("black"), .2);
+    height: 100%;
+    grid-template-rows: 1fr;
+
+    .article__content {
+      border-radius: 0;
+      border: 0;
+      text-align: center;
+    }
+
+    .article__title {
+      margin: 0;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: rgba(color("black"), .1);
+      @include make-transition();
+    }
+  }
+
+  &__link {
+    &:hover,
+    &:active,
+    &:focus {
+      .article__title,
+      .article__summary {
+        color: color("violet");
+        @include make-transition();
+      }
     }
   }
 }

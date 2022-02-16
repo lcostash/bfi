@@ -1,0 +1,8 @@
+@media screen and (min-width: map-get($breakpoints, "lg")) {
+  .article {
+    &__image {
+      min-height: fluid-unit(300px);
+      max-height: fluid-unit(300px);
+    }
+  }
+}

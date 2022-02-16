@@ -1,0 +1,5 @@
+.articles {
+  display: grid;
+  grid-gap: fluid-unit(16px);
+  grid-template-columns: 1fr;
+}

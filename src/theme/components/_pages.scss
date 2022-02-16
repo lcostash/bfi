@@ -1,0 +1,32 @@
+.pages {
+  @include make-reset-list();
+  display: grid;
+  grid-gap: fluid-unit(16px);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+
+  &__link {
+    height: fluid-unit(50px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: 6px solid rgba(color("black"), .5);
+    color: rgba(color("black"), .5);
+
+    &--disabled {
+      pointer-events: none;
+      border-color: rgba(color("black"), .1);
+      color: rgba(color("black"), .1);
+    }
+
+    &:not(&--disabled) {
+      &:hover,
+      &:active,
+      &:focus {
+        border-color: color("violet");
+        color: color("violet");
+      }
+    }
+  }
+}

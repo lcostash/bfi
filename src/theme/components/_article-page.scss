@@ -1,0 +1,26 @@
+.article-page {
+  &__image {
+    border-radius: fluid-unit(16px);
+    overflow: hidden;
+
+    img {
+      border-radius: fluid-unit(16px);
+      width: 100%;
+    }
+  }
+
+  &__tags {
+    display: grid;
+    gap: fluid-unit(10px);
+    grid-template-columns: fluid-unit(30px) 1fr;
+
+    dt,
+    dd {
+      text-align: left;
+    }
+  }
+
+  a {
+    @include make-link();
+  }
+}
